@@ -1,0 +1,88 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+:global {
+  .mySubscriptions {
+    .button {
+      height: 43px;
+      display: block;
+      line-height: 43px;
+      padding: 0 16px;
+      background:#3860BE;
+      width: fit-content;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 5px;
+    }
+    .desc {
+      font-size: 16px;
+      font-weight: 300;
+      margin-top: 30px;
+      margin-bottom: 70px;
+    }
+    .content {
+      .filter {
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+    .toggle {
+      width: 25%;
+      display:flex;
+      align-items: flex-start;
+      height: 45px;
+    }
+    @media (max-width: 1000px) {
+      .toggle {
+        width: 50%;
+      }
+    }   
+    @media (max-width: 600px) {
+      .toggle {
+        width: 100%;
+      }
+    }    
+    .toggleLabel {
+      padding-right:5px;
+      text-align: left;
+      width:40%;
+    }
+    .toggleContainer {
+      display:flex;
+      flex-wrap:wrap;
+      margin-bottom:25px;
+    }
+
+    /* Tooltip container */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: fit-content;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      padding: 5px;
+      border-radius: 4px;
+      font-size: 10px;
+
+      /* Position the tooltip text */
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -60px;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+  }
+}
+

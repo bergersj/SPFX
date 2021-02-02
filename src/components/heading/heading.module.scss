@@ -1,0 +1,62 @@
+//@import "../shared/color";
+
+:global {
+  .sectionHeading {
+    width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: baseline;
+
+    &.bg {
+      background:#F8F8F8;
+      color: white;
+      padding: 15px 0 23px 0px;
+      .heading {
+        margin-left: 15px;
+      }
+      .link {
+        margin-right: 10px;
+        a {
+          color: white;
+        }
+      }
+    }
+
+    .heading {
+      font-size: 24px;
+      font-weight: 600 !important;
+      word-break: break-word;
+      margin-right: 10px;
+      //padding-left:25px;
+    }
+    .leftLink {
+      margin-left: 10px;
+      min-width: 50px;
+      text-align: left;
+      a {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        color: #3860BE;
+        text-decoration: none;
+      }
+    }
+    .rightLink {
+      margin-left: auto;
+      min-width: 50px;
+      text-align: right;
+      a {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        color: #3860BE;
+        text-decoration: none;
+      }
+    }
+    @media (max-width:500px) {
+      .leftLink {
+        display: none;
+      }
+    }
+  }
+}

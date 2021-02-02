@@ -1,0 +1,177 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+:global {
+  .myNews {
+    .newsItemContainer {
+      display: inline-flex;
+
+      .ms-Spinner {
+        margin: 75%;
+      }
+
+      .noNewsMessage {
+        width: 400px;
+        text-align: center;
+        margin: 10% 0;
+      }
+
+      .articleCardOne {
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        padding: 20px;
+        width: 98%;
+        display: inline-flex;
+        margin-right:2%;
+        border-radius: 5px; //adding rounded corners for Clorox
+        .articleImage {
+          max-width: 100%;
+          height: auto;
+        }
+        @media (max-width: 600px) {
+          display: block;
+          width: 90%;
+          .articleImage {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+          }
+        }
+        .articleInfo {
+          margin-left: 15px;
+          font-weight: 500;
+          max-width: 524px;
+  
+          .articleDate {
+            color: #c2c2c2;
+          }
+          .articleTitle {
+            color: #3860BE;
+            margin: 8px 0;
+            font-size: 18px;
+            a {
+              text-decoration: none;
+              color: #3860BE
+            }
+          }
+          .articleDescription {
+            color: #000000;
+          }
+        }
+      }
+
+      .articleCardTwo {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        background-color: white;
+        padding: 20px;
+        width: 45%;
+        display: block;
+        margin-right:4%;
+        padding-bottom: 0px;
+        border-radius: 5px; //adding rounded corners for Clorox
+        .articleImage {
+          max-width: 100%;
+          height: auto;
+          max-height: 250px;
+        }
+        .articleInfo {
+          margin: 15px 0 ;
+          font-weight: 500;
+  
+          .articleDate {
+            color: #c2c2c2;
+          }
+          .articleTitle {
+            color: #3860BE;
+            margin: 8px 0;
+            font-size: 18px;
+            a {
+              text-decoration: none;
+              color: #3860BE
+            }
+          }
+          .articleDescription {
+            color: #000000;
+          }
+        }
+        .twoImageContainer {
+          height:250px;
+        }
+      }
+    }
+    .articleStack {
+      display: block;
+      width: 50%;
+
+      .articleCardColumn {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        background-color: white;
+        padding: 20px;
+        display: inline-flex;
+        height: auto;
+        margin-bottom:5%;
+        max-height: 90px;
+        border-radius: 5px; //adding rounded corners for Clorox
+        a {
+          height: auto;
+          width: 33%;
+          margin-right:10px;
+          min-width: 100px;
+        }
+        .articleImage {
+          max-width: 100%;
+          height: auto;
+        }
+        .articleInfo {
+          font-weight: 500;
+          display: inline;
+          .articleDate {
+            color: #c2c2c2;
+          }
+          .articleTitle {
+            color: #3860BE;
+            margin: 8px 0;
+            font-size: 18px;
+            a {
+              text-decoration: none;
+              color: #3860BE
+            }
+          }
+        }
+      }
+    }
+    .articleCardColumn:last-child {
+      margin-bottom: 0;
+      margin-top: 5px;
+    }
+    @media (max-width: 750px) {
+      .newsItemContainer {
+        display: block;
+        .articleCardTwo {
+          width: 90%;
+          margin-bottom: 20px;
+          padding-bottom: 1px;
+          img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+        .articleStack {
+          width: 100%;
+          .articleCardColumn {
+            margin-bottom: 2%;
+            display: flex;
+            width: 90%;
+          }
+          .articleImage {
+            max-height:100px;
+          }
+        }
+      }
+    }
+    .boxHover:hover{
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    }
+  }
+}
