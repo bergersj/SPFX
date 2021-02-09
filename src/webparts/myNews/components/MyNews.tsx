@@ -23,6 +23,7 @@ export const MyNewsItemOne = (props: IMyNewsItem) => {
     let dt = moment(date);
     return dt.format("D MMM YYYY");
   };
+  let articleDescription = props.articleDescription == null ? " " : props.articleDescription;
 
   return <div className="articleCardOne boxHover">
     <a
@@ -48,7 +49,7 @@ export const MyNewsItemOne = (props: IMyNewsItem) => {
           {props.title}
         </a>
       </div>
-      <div className="articleDescription">{props.articleDescription}</div>
+      <div className="articleDescription">{articleDescription}</div>
     </div>
   </div>;
 };
@@ -58,8 +59,8 @@ export const MyNewsItemTwo = (props: IMyNewsItem) => {
     let dt = moment(date);
     return dt.format("D MMM YYYY");
   };
-
-  let description = props.articleDescription.length > 145 ? props.articleDescription.substring(0, Math.min(props.articleDescription.length,145)).concat("...") : props.articleDescription;
+  let articleDescription = props.articleDescription == null ? " " : props.articleDescription;
+  let description = articleDescription.length > 145 ? articleDescription.substring(0, Math.min(articleDescription.length,145)).concat("...") : articleDescription;
 
   return <div className="articleCardTwo boxHover">
     <a
@@ -203,15 +204,15 @@ export default class MyNews extends React.Component<IMyNewsProps, MyNewsState, {
     //if topics and communities are both blank
     let subscriptionFilters = topicFilters.length==0 && communityFilters.length==0 && "&";
     //if topics are blank and communities are just one
-    subscriptionFilters = topicFilters.length==0 && communityFilters.length==1 ? `&refinementfilters='` + communityFilters.toString() + `'&` : subscriptionFilters;
+    subscriptionFilters = topicFilters.length==0 && communityFilters.length==1 ? `&refinementfilters='` + communityFilters.toString().replace(`'`,`''`) + `'&` : subscriptionFilters;
     //if topics are blank and communities are not blank
-    subscriptionFilters = topicFilters.length==0 && communityFilters.length>1 ? `&refinementfilters='or(` + communityFilters.toString() + `)'&` : subscriptionFilters;
+    subscriptionFilters = topicFilters.length==0 && communityFilters.length>1 ? `&refinementfilters='or(` + communityFilters.toString().replace(`'`,`''`) + `)'&` : subscriptionFilters;
     //if communities are blank and topics are just one
-    subscriptionFilters = communityFilters.length==0 && topicFilters.length==1 ? `&refinementfilters='` + topicFilters.toString() +`'&` : subscriptionFilters;
+    subscriptionFilters = communityFilters.length==0 && topicFilters.length==1 ? `&refinementfilters='` + topicFilters.toString().replace(`'`,`''`) +`'&` : subscriptionFilters;
     //if communities are blank and topics are not blank
-    subscriptionFilters = communityFilters.length==0 && topicFilters.length>1 ? `&refinementfilters='or(` + topicFilters.toString() +`)'&` : subscriptionFilters;
+    subscriptionFilters = communityFilters.length==0 && topicFilters.length>1 ? `&refinementfilters='or(` + topicFilters.toString().replace(`'`,`''`) +`)'&` : subscriptionFilters;
     //if topics and communities are both not blank
-    subscriptionFilters = topicFilters.length>0 && communityFilters.length>0 ? `&refinementfilters='or(` + topicFilters.toString() + `,` + communityFilters.toString() + `)'&` : subscriptionFilters;
+    subscriptionFilters = topicFilters.length>0 && communityFilters.length>0 ? `&refinementfilters='or(` + topicFilters.toString().replace(`'`,`''`) + `,` + communityFilters.toString().replace(`'`,`''`) + `)'&` : subscriptionFilters;
 
     const myNewsArray = [];
     const selectProperties = `'Created%2cPath%2cUrl%2cTitle%2cAuthor%2cRefinableNewsType%2cTeam%2cDescription%2cFirstPublishedDate%2cPictureThumbnailURL%2cRefinableTeam%2cRefinableTeamType%2cRefinableTopic%2cSite'`;
